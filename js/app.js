@@ -1,6 +1,6 @@
 var INTERVAL = 1000; 
 var DEFAULT_MESSAGE = "終了";
-//{}以下を定義する関数
+//alarmに{}以下を代入する関数
 var alarm = {
 		duration: -1,
 		message: ""
