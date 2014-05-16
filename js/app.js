@@ -54,8 +54,8 @@ var startAlarm = function(){
 //以下のクラスから動作を選択する
 var initApp = function(){
 		alarm.durationSelect = document.querySelector("#duration");//"#duration"を取得し変数化
-		alarm.messageInput = document.querySelector("#message");"message"を取得し変数化
-		alarm.output = document.querySelector("#countdown");"countdown"を取得し変数化
+		alarm.messageInput = document.querySelector("#message");//"message"を取得し変数化
+		alarm.output = document.querySelector("#countdown");//"countdown"を取得し変数化
 
 		Notification.requestPermission(function(status){//Notification.permissionとstatusが違う場合
 				if(Notification.permission != status){
