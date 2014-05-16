@@ -1,6 +1,6 @@
 var INTERVAL = 1000; 
 var DEFAULT_MESSAGE = "終了";
-//alarmに{}以下を代入する関数
+//{}以下を定義する関数
 var alarm = {
 		duration: -1,
 		message: ""
@@ -32,12 +32,12 @@ var update = function(){
 		if(isReadyToCountdown()){
 			showAlarmMessage();
 		}
-	//カウントダウンが始まっていてかつ0以上である場合
+};		//カウントダウンが始まっていてかつ0以上である場合
 				updateCounter();
 				window.setTimeout(update, INTERVAL);//INTERVALで定められた時間が経過したときに、updateを呼び出す
-		else{
-		}	//カウントダウンが終わった場合
-};			
+		}else{
+			//カウントダウンが終わった場合
+		
 //カウントし続ける関数
 var isReadyToCountdown = function(){
 		return Number.isInteger(alarm.duration) && alarm.duration > 0;//かつ0以上の場合
@@ -61,15 +61,12 @@ var initApp = function(){
 		alarm.durationSelect = document.querySelector("#duration");//"#duration"を取得し変数化
 		alarm.messageInput = document.querySelector("#message");//"message"を取得し変数化
 		alarm.output = document.querySelector("#countdown");//"countdown"を取得し変数化
-
 		Notification.requestPermission(function(status){
 				if(Notification.permission != status){//Notification.permissionとstatusが違う場合
 						Notification.permission = status;
 				}
 		});
-
 		var startButton = document.querySelector("#start");//"#start"を取得し変数化
 		startButton.addEventListener("click", startAlarm);//イベントリスナーを用いて"click"にstartAlarm変数を呼びだす
 };
-
 initApp();
