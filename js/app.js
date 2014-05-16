@@ -32,13 +32,12 @@ var update = function(){
 		if(isReadyToCountdown()){
 			showAlarmMessage();
 		
-		//カウントダウンが始まっていてかつ0以上である場合
+};		//カウントダウンが始まっていてかつ0以上である場合
 				updateCounter();
 				window.setTimeout(update, INTERVAL);//INTERVALで定められた時間が経過したときに、updateを呼び出す
 		}else{
 			//カウントダウンが終わった場合
 		}
-	}
 //カウントし続ける関数
 var isReadyToCountdown = function(){
 		return Number.isInteger(alarm.duration) && alarm.duration > 0;//かつ0以上の場合
