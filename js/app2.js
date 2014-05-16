@@ -13,7 +13,19 @@ var formatCounterAsString = function(){
 var updateCounter = function(){
 		alarm.output.textContent = formatCounterAsString();
 };
-
+//終了メッセージを表示させる関数
+var showAlarmMessage = function(){
+		var message = DEFAULT_MESSAGE;
+		if(alarm.message.length > 0){
+			//0以上の場合
+				message = alarm.message;
+		}
+		if(Notification.permission == "granted"){
+			//通知機能があった場合
+				var notification = new Notification(message);
+		}
+		alarm.output.textContent = message;
+};
 //カウントダウン数字を表示させる関数
 var update = function(){
 		alarm.duration = alarm.duration - 1;//残り時間から-１をする
