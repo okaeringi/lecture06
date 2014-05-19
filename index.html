@@ -10,6 +10,7 @@
     <div id="control">
       <form>
         <select id="duration">
+          <option value="5">5秒後</option>
           <option value="10">10秒後</option>
           <option value="30">30秒後</option>
           <option value="60">60秒後</option>
@@ -18,7 +19,9 @@
           <option value="900">15分後</option>
           <option value="1800">30分後</option>
         </select>
-        に予鈴と
+        に
+        <input type="text" id="message">
+        と
         <button type="button" id="start">表示する</button>
       </form>
     </div>
